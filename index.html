@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Debbie Joslin Realty</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Debbie Joslin works hard to help you sell your home or find the one that is right for you in Delta Junction and Ft. Greely Alaska. Debbie is a Realtor with Somers and Associates Realtors, Inc. Debbie is an Accredited Buyer's Representative as well as a VA and Military Real Estate Specialist." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/tab_icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/tab_icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/tab_icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/tab_icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/tab_icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/tab_icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/tab_icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/tab_icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/tab_icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/tab_icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/tab_icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/tab_icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/tab_icon/favicon-16x16.png">
+    <link rel="manifest" href="/images/tab_icon/manifest.json">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   <script> 
+   function showProperties() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//                document.getElementById("properties").innerHTML = xmlhttp.responseText;
+                document.getElementById("properties").innerHTML = "AJAX suceeded";
+            }
+            else {
+                document.getElementById("properties").innerHTML = "AJAX failed";
+            }
+        };
+        xmlhttp.open("GET", "/php_scripts/get_properties.php?q=" + "*", true);
+        xmlhttp.send();
+    }
+    </script>
+  </head>
+
+<body
+onpageshow="showProperties()">
+<div class="container-fluid">
+  <div class="page-header">
+    <h1>Debbie Joslin Realty</h1>
+  </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Debbie Joslin Realty</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Search Real Estate
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Residential</a></li>
+            <li><a href="#">Lots and Land</a></li>
+            <li><a href="#">Commercial</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Buying</a></li>
+        <li><a href="#">Selling</a></li>
+        <li><a href="#">My Blog</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container-fluid">
+  <div class="btn-group btn-group-justified">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Price &#x21D5; <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Sort Increasing &#9650;</a></li>
+        <li><a href="#">Sort Decreasing &#9660;</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Sq Feet &#x21D5; <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Sort Increasing &#9650;</a></li>
+        <li><a href="#">Sort Decreasing &#9660;</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Lot Size &#x21D5; <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Sort Increasing &#9650;</a></li>
+        <li><a href="#">Sort Decreasing &#9660;</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Popularity &#x21D5; <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Sort Increasing &#9650;</a></li>
+        <li><a href="#">Sort Decreasing &#9660;</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p id="properties">
+    
+  </p>
+
+  <ul class="pagination">
+    <li title="left"><a href="#">«</a></li>
+    <li title="page-link-1"><a href="#">1</a></li>
+    <li title="page-link-2"><a href="#">2</a></li>
+    <li title="page-link-3"><a href="#">3</a></li>
+    <li title="page-link-4"><a href="#">4</a></li>
+    <li title="page-link-5"><a href="#">5</a></li>
+    <li title="right"><a href="#">»</a></li>
+  </ul>
+
+</div>
+</body>
+</html>
